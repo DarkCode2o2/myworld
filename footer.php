@@ -15,16 +15,16 @@
                     <h3>تواصل معنا</h3>
                     <ul class="cont-info">
                         <li>
-                            <a href="https://twitter.com/darkcodePro" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
                         </li>
                         <li>
-                            <a href="https://www.linkedin.com/in/omar-abker-a4917b23b/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
                         </li>
                         <li>
-                            <a href="https://t.me/DarkCode2o2" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+                            <a href="#" target="_blank"><i class="fa-brands fa-telegram"></i></a>
                         </li>
                         <li>
-                            <a href="https://github.com/DarkCode2o2" target="_blank"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
                         </li>
                     </ul>
                 </div>

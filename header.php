@@ -20,7 +20,7 @@
     <title>Home</title>
 </head>
 <body>
-    <a href="https://t.me/DarkCode2o2" class="telegram-icon" target="_blank">
+    <a href="#" class="telegram-icon" target="_blank">
         <i class="fa-brands fa-telegram"></i>
     </a>
     <header>
