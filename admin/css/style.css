@@ -1,0 +1,171 @@
+/* Start Main Rules  */
+:root {
+    --black:#1E293B;
+    --blue:#0093E9;
+    --white: #FDFDFD;
+    --shadow: 0 0 10px #ddd;
+    --transition: .3s;
+    --hover: #0681c9;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--white) !important;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.main-title {
+    color: #0093E9 !important;
+    font-size: 50px;
+    border-bottom: 5px solid var(--blue);
+    width: fit-content;
+    padding-bottom: 10px;
+}
+
+
+a {
+    text-decoration: none !important;
+}
+ul li a {
+    position: relative;
+}
+ul li a::after {
+    content: '';
+    background-color: #fafafa;
+    width: 0%;
+    position: absolute;
+    height: 2px;
+    left: 0;
+    bottom: -8px;
+    transition: .3s;
+}
+
+ul li a:hover::after, 
+ul li a.active::after {
+    width: 100%;
+}
+/* Start Dashboard  */
+header {
+    background-color: #0093E9 !important;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+}
+.dashboard .container {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.dashboard .container .boxes .box {
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: .3s;
+}
+.dashboard .container .boxes .box:hover {
+    box-shadow: 1px 1px 10px #777;
+}
+.dashboard .container .boxes .box:first-of-type {
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+}
+.dashboard .container .boxes .box:nth-of-type(2) {
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+
+}
+.dashboard .container .boxes .box:last-of-type {
+    background-color: #FBAB7E;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+
+}
+
+.dashboard .container .boxes .box div {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 50px;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.dashboard .container .boxes .box h3 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+/* End Dashboard  */
+/* Start Projects  */
+.projects {
+    padding: 120px 0;
+}
+.projects .container > h3 {
+    font-size: 50px !important;
+}
+.projects .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.projects .cards .card {
+    background-color: #fafafa;
+}
+.projects .add-btn {
+    background-color: var(--blue);
+    color: #fafafa;
+    padding: 10px 15px;
+    box-shadow: 1px 1px 10px var(--blue);
+    font-size: 22px;
+    border-radius: 10px;
+    transition: .3s;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    z-index: 999999;
+}
+.projects .add-btn:hover {
+    background-color:var(--hover);
+}
+/* End Projects  */
+
+.row {
+    justify-content: center;
+}
+
+form {
+    background-color: #eee;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #ddd;
+    text-align: center;
+    width: 500px;
+}
+
+form h3 {
+    font-size: 40px;
+    color: var(--blue);
+    margin-bottom: 20px;
+}
+
+form label {
+    font-size: 20px;
+}
+
+form input:not([type="submit"]) {
+    margin: 0px auto 20px;
+    
+}
+
+form input::placeholder {
+    color: #777 !important;
+}

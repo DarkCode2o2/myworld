@@ -9,7 +9,7 @@
         $user = htmlspecialchars($_POST['admin_name']);
         $pass = htmlspecialchars($_POST['admin_pass']);
 
-        if($user == "dark code" && $pass == "darkcode@gmail") {
+        if($user == "dark code" && $pass == "darkcode") {
             $_SESSION['admin_name'] = $user;
 
             header("Location: index.php");

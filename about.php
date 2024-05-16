@@ -12,13 +12,15 @@
                     <img src="images/about.png" alt="">
                 </div>
                 <div class="content">
-                    <h2>Jhon doe</h2>
+                    <h2>عمر أبكر</h2>
                     <p>مطور Full Stack</p>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, molestias! In ipsam quos veritatis aperiam repellat tempora, rem ipsum nihil. Totam debitis, eius nemo corrupti magnam iste sunt similique? Architecto.
+                    أنا مطوِّر Full-Stack، أعيش في المدينة المنورة، المملكة العربية السعودية. بدأت رحلتي المهنية في تطوير الويب في عام 2021. أنا متحمس لإنشاء مواقع ويب جميلة ووظيفية وسهلة الاستخدام. أستثمر دائمًا في نفسي من خلال التعلم وتطوير مهاراتي كمطوِّر. أستمتع بإنشاء مواقع ويب متكاملة بالكامل ومشاريع جانبية مبتكرة.
+
+
                     <div>
                         <p>
-                            <span>البريد الألكتروني:</span> jhon@gmail.com
+                            <span>البريد الألكتروني:</span> darkcode2o2@gmail.com
                         </p>
                         <p>
                             <span>اللغات:</span> En/Ar

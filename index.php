@@ -92,7 +92,6 @@
                 انا Dark Code &#128516
                 </h2>
                 <div class="auto-type">
-                    <p>أنا </p>
                     <p class="typing"></p>
                 </div>
                 <a href="https://t.me/DarkCode2o2" target="_blank"><i class="fa-solid fa-chevron-right ms-1"></i>ابدأ مشروعك</a>
@@ -229,7 +228,7 @@
                    
                 </div>
                 <div class="image">
-                    <img src="images/garntiy.jpg" alt="">
+                    <img src="images/garntiy.png" alt="">
                 </div>
             </div>
         </div>
