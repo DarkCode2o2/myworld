@@ -159,7 +159,10 @@
                                     ?>
                                     <div class="comment-content">
                                         <h5><?php echo $comment['username']?></h5>
-                                        <span class='card-date'><?php echo $comment['created_at']?></span>
+                                        <span class='card-date'><?php 
+                                    $date = date_create($comment['created_at']);
+                                    echo date_format($date, 'M d, Y')
+                                ?></span>
                                         <p><?php echo $comment['comment']?></p>
                                     </div>
                                 </div>
