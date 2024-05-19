@@ -36,6 +36,7 @@ ul {
 a {
     text-decoration: none !important;
 }
+
 ul li a {
     position: relative;
 }
@@ -53,6 +54,26 @@ ul li a::after {
 ul li a:hover::after, 
 ul li a.active::after {
     width: 100%;
+}
+
+.success,
+.error {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 10px;
+    position: fixed;
+    right: 20px;
+    top: 120px;
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    z-index: 999999;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 22px;
+}
+
+.success{
+    color: #57A6A1;
 }
 /* Start Dashboard  */
 header {
@@ -136,7 +157,129 @@ header {
 .projects .add-btn:hover {
     background-color:var(--hover);
 }
+
 /* End Projects  */
+/* Start Reviews  */
+.reviews .container {
+    padding: 80px 0px 120px;
+}
+
+.reviews .container .main-title {
+    margin-bottom: 80px;
+    font-size: 40px;
+    border-width: 3px;
+}
+
+.reviews .container .main-title::after {
+    height: 2px;
+}
+
+.reviews .container .option {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+.reviews .container .option a {
+    border: 1px solid var(--black);
+    padding: 5px 15px;
+    font-size: 18px;
+    border-radius: 5px;
+}
+.reviews .container .option a.active {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.reviews .container .option i {
+    font-size: 30px;
+}
+
+.reviews .container .boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.reviews .boxes .box {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    background-color: #fafafa;
+    position: relative;
+}
+.reviews .boxes .box .delete-btn {
+    font-size: 30px;
+    color: tomato;
+    position: absolute;
+    left: -15px;
+    top: -15px;
+    cursor: pointer;
+    transition: .3s;
+}
+.reviews .boxes .box .approve-btn {
+    padding: 5px 15px;
+    color: var(--white);
+    background-color: var(--blue);
+    border-radius: 5px;
+    font-size: 14px;
+    transition: .3s;
+}
+.reviews .boxes .box .approve-btn:hover {
+    background-color: var(--hover);
+}
+.reviews .boxes .box .delete-btn:hover {
+    color: red;
+    transform: rotate(60deg);
+}
+.reviews .boxes .box .stars {
+    margin-bottom: 20px;
+    color: var(--blue);
+}
+.reviews .boxes .box p {
+    width: 100%;
+    margin-bottom: 20px;
+    flex: 1;
+    font-size: 16px;
+}
+.reviews .boxes .box img {
+    width: 50px;
+    height: 50px;
+    box-shadow: var(--shadow);
+    border-radius: 50%;
+}
+.reviews .boxes .box .userInfo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+}
+.reviews .boxes .box .userInfo img {
+    box-shadow: 1px 1px 10px #a3a3a3;
+}
+.reviews .boxes .box .userInfo h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.reviews .boxes .box .userInfo span {
+    color: #777;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.reviews .boxes .box .date {
+    text-align: left;
+    font-size: 14px;
+    color: #777;
+    font-weight: bold;
+    margin-top: 10px;
+}
+/* End Reviews  */
 
 .row {
     justify-content: center;

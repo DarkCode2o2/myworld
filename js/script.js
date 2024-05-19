@@ -46,27 +46,23 @@ $(function() {
     // Get Page Name From Href
 
     
-    let link = window.location.href.split('/')[window.location.href.split('/').length - 1]
+    let linkName = window.location.pathname;
+    let link = linkName.split('/')[linkName.split('/').length - 1]
     let pagename = link.split('.')[0];
 
     $('.paths .link-1').attr("href", window.location.href).css("color", "#0093E9").text(pagename.toUpperCase())
 
      // Add active class on nav item
-     $('.navbar-nav .nav-link').each(function() {
-      last = this.href.substring(this.href.lastIndexOf("/") + 1)
+      $('.navbar-nav .nav-link').each(function() {
+        last = this.href.substring(this.href.lastIndexOf("/") + 1)
         if(last == link) {
           $(this).addClass('active');
         }
-
      })
 
-
-    // Auto type
   
     // Auto type
-    let urlName = window.location.href.split('/')[window.location.href.split('/').length - 1];
-    
-    if(urlName == 'index.php' || urlName == '') {
+    if(link == 'index.php' || link == '') {
       var typed = new Typed('.typing', {
         strings: ['مطور واجهات أمامية.', 'مطور واجهات خلفية.'],
         typeSpeed: 100,
@@ -98,3 +94,23 @@ $(function() {
         },
       });
 })
+
+
+// Review Stars
+
+// Star Ratings code 
+let starRatings = document.querySelectorAll('.star_review i');
+let ratingValue = document.getElementById('ratingValue')
+
+starRatings.forEach((star, index) => {
+  star.addEventListener('click', (e) => {
+      // Retrieve the index of the clicked star
+      starRatings.forEach(e => {
+        e.classList.replace('fa-solid', 'fa-regular')
+        if(e.dataset.rating == index || e.dataset.rating < index) {
+          e.classList.replace('fa-regular', 'fa-solid')
+          ratingValue.value = index + 1;
+        }
+      })
+  });
+});

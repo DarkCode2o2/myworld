@@ -9,13 +9,14 @@
         $user = htmlspecialchars($_POST['admin_name']);
         $pass = htmlspecialchars($_POST['admin_pass']);
 
-        if($user == "dark code" && $pass == "darkcode") {
+        if($user == "dark code" && $pass == "darkcode2o2@gmail.com") {
+        
             $_SESSION['admin_name'] = $user;
 
             header("Location: index.php");
             exit();
         }else {
-            $error = '<p class="error msg">خطأ في اسم المستخدم او كلمة المرور!</p>';
+            $error = '<p class="msg text-danger">خطأ في اسم المستخدم او كلمة المرور!</p>';
         }
     }
 ?>
@@ -26,11 +27,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
-<body>
-    <form action="" method="POST"> 
+<body class="bg-light">
+    <form action="" method="POST" class="position-absolute top-50 start-50 translate-middle"> 
         <h3>تسجيل دخول</h3>
         <div class="row">
             <div class="col-10">
@@ -43,6 +44,6 @@
         </div>
         <input type="submit" value="تسجيل دخول" class="btn btn-primary">
     </form>
-    <script src="../js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

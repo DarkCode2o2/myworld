@@ -1,7 +1,6 @@
 <?php 
     include 'connect.php';
-    
-
+    include 'helpers.php';
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
@@ -44,6 +43,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="projects.php">المشاريع</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="reviews.php">آراء العملاء</a>
+                        </li>
                     </ul>
 
                     <div class="head-box">
@@ -67,8 +69,11 @@
     </header>
     <div class="hero">
         <div class="paths">
-            <a href="index.php">Home</a>
-            <i class="fa-solid fa-angles-right"></i>
-            <p class="link-1"></p>
+            <div class="links">
+                <a href="index.php">Home</a>
+                <i class="fa-solid fa-angles-right"></i>
+                <p class="link-1"></p>
+            </div>
+            <p><?php echo getTitle()?></p>
         </div>
     </div>

@@ -1,4 +1,7 @@
-<?php include 'header.php'?>
+<?php 
+    $pageTitle = 'تعرف عليّ وعلى قصتي ومهاراتي وشغفي في تقديم أفضل الخدمات.';
+    include 'header.php'
+?>
 
 
     <!-- Start About -->

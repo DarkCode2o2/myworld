@@ -1,6 +1,6 @@
 <?php
     include 'header.php';
-    include 'healpers.php';
+    include 'helpers.php';
 
     $sql = $con->prepare("SELECT * FROM projects ORDER BY project_id DESC");
     $sql->Execute();

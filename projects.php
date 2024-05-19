@@ -1,4 +1,5 @@
 <?php 
+    $pageTitle = 'تصفح مشاريعي التي أنجزتها وتعرف على تفاصيل إنجازاتي وأعمالي المتميزة.';
     include 'header.php';
     include 'connect.php';
 
@@ -37,7 +38,11 @@
                                 <a href="project.php?page=<?php echo $proInfo['project_id']?>#comments">
                                     <i class="fa-solid fa-comments"></i>
                                 </a>
-                                <span><?php echo $proInfo['created_at']?></span>
+                                <span><?php 
+                                    $date = date_create($proInfo['created_at']);
+                                    echo date_format($date, 'l, M d, Y')
+                                ?>
+                            </span>
                             </div>
                         </div>
             <?php 

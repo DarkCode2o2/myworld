@@ -19,3 +19,12 @@ function getData($id = null, $ele = null,  $table, $conn) {
         return $data;
     }
 }
+
+
+function getCount($table, $con) {
+    $sql = $con->prepare("SELECT COUNT(*) FROM $table");
+    $sql->execute();
+    $count = $sql->fetchColumn();
+
+    echo $count;
+}

@@ -1,20 +1,13 @@
 <?php 
     include 'connect.php';
-
+    include 'connect.php';
+    include 'helpers.php';
     $get = $con->prepare('SELECT * FROM projects  LIMIT 3 ');
     $get->execute(array());
     $projectsInfo = $get->fetchAll();
 
-    // Get Comments 
-    $sql = $con->prepare("SELECT comments.*, users.username AS username, 
-        users.user_id,
-        users.avatar AS avatar
-        FROM comments JOIN users ON 
-        comments.user_id = users.user_id
-        ORDER BY comment_id DESC
-      ");
-    $sql->execute(array());
-    $userComments = $sql->fetchAll();
+    // Get Reviews 
+    $userReviews = getData('0', "approval", '*', 'reviews', $con);
 
 ?>
 <!DOCTYPE html>
@@ -57,6 +50,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="projects.php">المشاريع</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="reviews.php">آراء العملاء</a>
                         </li>
                     </ul>
 
@@ -265,45 +261,52 @@
     <!-- End Projcts  -->
     <!-- Start Opinions  -->
     <div class="opinions">
-        <div class="my-cont">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none" fill="#fafafa" class="shape-top">
                 <path class="shape-fill" d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7
                 c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4
                 c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"></path>
             </svg>
+            <?php if(!empty($userReviews)) :?>
             <div class="title">
-                
                 <h2>
-                    التعليقات
+                    آراء العملاء
                     <i class="fa-regular fa-comments"></i>
                 </h2>
             </div>
             <!-- Swiper -->
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <?php foreach($userComments as $comment):?>
-                        <div class="swiper-slide">
-                            <div class="img">
-                                <?php 
-                                    if(empty($comment['avatar'])) {
-                                        echo "<img src='images/default.jpg' class='img-fluid'>";
-                                    }else {
-                                        echo "<img src='uploads/avatars/".$comment['avatar']."' class='img-fluid'>";
-                                    }
-                                ?>
-                            </div>
-                            <div class="content">
-                                <h2><?php echo $comment['username']?></h2>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <?php foreach($userReviews as $review):?>
+                            <div class="swiper-slide">
                                 <p>
-                                    <?php echo $comment['comment']?>
+                                    <?php echo $review['content'] ?>
                                 </p>
+                                <div class="stars">
+                                    <?php  for ($i = 0; $i < 5; $i++):
+                                            if ($i < $review['rating']): ?>
+                                                <span><i class="fa-solid fa-star"></i></span>
+                                            <?php
+                                                continue;
+                                            endif ?>
+                                            <span><i class="fa-regular fa-star"></i></span>
+                                    <?php endfor;
+
+                                    if($review['approval'] == 0) { ?>
+                                        <a href="reviews.php?id=<?php echo $review['id']?>&type=approval" class="approve-btn">Approval</a>
+                                    <?php }?>
+                                </div>
+                                <div class="userInfo">
+                                    <div>
+                                        <h3><?php echo $review['name']?></h3>
+                                        <span><?php echo $review['city']?></span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    <?php endforeach;?>
+                        <?php endforeach?>
+                    </div>
+                    <div class="swiper-pagination"></div>
                 </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
+            <?php endif?>
     </div>
     <!-- End Opinions  -->
 

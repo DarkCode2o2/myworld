@@ -1,4 +1,7 @@
-<?php include 'header.php'?>
+<?php 
+    $pageTitle = 'استكشف خدماتي المتنوعة واكتشف كيف يمكنني مساعدتك في تحقيق أهدافك.';
+    include 'header.php'
+?>
 
     <!-- Start Services  -->
     <div class="services">
