@@ -1,4 +1,5 @@
 <?php 
+    $pageTitle = 'تسجيل الدخول للوصول إلى ميزة التعليق على المشاريع';
     session_start();
     include 'connect.php';    
 
